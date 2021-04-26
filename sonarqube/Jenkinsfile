@@ -3,19 +3,10 @@ node {
     myGradleContainer.pull()
 
     stage('prep') {
-        git url: 'https://github.com/AngelManuel1995/simple-node-app-ci-cd-example.git'
-        nodejs('nodejs')
+        git url: 'https://github.com/wardviaene/gs-gradle.git'
     }
 
-  stage('Quality Gates') {
-    sh "touch test.txt"
-    shell("npm install")
-    /*script {
-        sh 'gulp sonar'
-    }*/
-   } 
-
-/*    stage('build') {
+    stage('build') {
       myGradleContainer.inside("-v ${env.HOME}/.gradle:/home/gradle/.gradle") {
         sh 'cd complete && /opt/gradle/bin/gradle build'
       }
@@ -26,5 +17,5 @@ node {
       withCredentials([string(credentialsId: 'sonar', variable: 'sonarLogin')]) {
         sh "${sonarqubeScannerHome}/bin/sonar-scanner -e -Dsonar.host.url=http://sonarqube:9000 -Dsonar.login=${sonarLogin} -Dsonar.projectName=gs-gradle -Dsonar.projectVersion=${env.BUILD_NUMBER} -Dsonar.projectKey=GS -Dsonar.sources=complete/src/main/ -Dsonar.tests=complete/src/test/ -Dsonar.language=java -Dsonar.java.binaries=."
       }
-    } */
+    }
 }
