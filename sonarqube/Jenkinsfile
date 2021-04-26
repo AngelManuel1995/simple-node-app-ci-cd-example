@@ -4,9 +4,7 @@ node {
 
     stage('prep') {
         git url: 'https://github.com/AngelManuel1995/simple-node-app-ci-cd-example.git'
-        wrappers {
-           nodejs('nodejs')
-    	}
+        nodejs('nodejs')
     }
 
   stage('Quality Gates') {
