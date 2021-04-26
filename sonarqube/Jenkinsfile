@@ -7,6 +7,7 @@ node {
     }
 
   stage('Quality Gates') {
+    sh "touch test.txt"
     script {
         sh 'gulp sonar'
     }
