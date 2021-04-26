@@ -4,13 +4,17 @@ node {
 
     stage('prep') {
         git url: 'https://github.com/AngelManuel1995/simple-node-app-ci-cd-example.git'
+        wrappers {
+           nodejs('nodejs')
+    	}
     }
 
   stage('Quality Gates') {
     sh "touch test.txt"
-    script {
+    shell("npm install")
+    /*script {
         sh 'gulp sonar'
-    }
+    }*/
    } 
 
 /*    stage('build') {
