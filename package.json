@@ -12,7 +12,9 @@
   "dependencies": {
     "express": "^4.14.0",
     "http-errors": "^1.7.0",
-    "mysql": "^2.10.2"
+    "mysql": "^2.10.2",
+    "gulp": "^4.0.2",
+    "sonarqube-scanner": "^2.6.0"
   },
   "devDependencies": {
     "inherits": "^2.0.3",
